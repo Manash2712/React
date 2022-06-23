@@ -3,13 +3,13 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import About from './components/About';
+// import About from './components/About';
 import React, {useState} from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Routes
+// } from "react-router-dom";
 
 
 function App() {
@@ -51,27 +51,27 @@ function App() {
     <>    
       {/* <Navbar title="TextUtils" about="About TextUtils"/> */}
       {/* <Navbar/> */}
-      <Router>
+      {/* <Router> */}
         
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
         <Alert alert={alert}/>
         <div className="container my-3" >
-          <Routes>
+          {/* <Routes> */}
             {/* react always does partial matching for exact matching we use exact path
             /users  --component1
             /users/home --component2
             */}
-              <Route exact path="/about" element={<About />}>
+              {/* <Route exact path="/about" element={<About />}> */}
                 {/* {} */}
-              </Route>
-              <Route exact path="/" element={<TextForm heading="Enter the text to analyse below" mode={mode} showAlert={showAlert}/>}>
-                {/* {<TextForm heading="Enter the text to analyse below" mode={mode} showAlert={showAlert}/>} */}
-              </Route>
-          </Routes>
+              {/* </Route> */}
+              {/* <Route exact path="/" element={<TextForm heading="Enter the text to analyse below" mode={mode} showAlert={showAlert}/>}> */}
+                {<TextForm heading="Enter the text to analyse below" mode={mode} showAlert={showAlert}/>}
+              {/* </Route> */}
+          {/* </Routes> */}
 
         </div>
       
-      </Router>
+      {/* </Router> */}
     </>
 
   );
