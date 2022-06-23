@@ -8,11 +8,8 @@ import React, {useState} from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  Link
+  Routes
 } from "react-router-dom";
-
-
 
 
 function App() {
