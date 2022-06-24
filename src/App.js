@@ -26,18 +26,18 @@ function App() {
     }, 2000);
   }
 
-  const removeBodyClasses = ()=>{
-    document.body.classList.remove('bg-light');
-    document.body.classList.remove('bg-dark');
-    document.body.classList.remove('bg-warning');
-    document.body.classList.remove('bg-success');
-    document.body.classList.remove('bg-primary');
-    document.body.classList.remove('bg-danger');
-  }
+  // const removeBodyClasses = ()=>{
+  //   document.body.classList.remove('bg-light');
+  //   document.body.classList.remove('bg-dark');
+  //   document.body.classList.remove('bg-warning');
+  //   document.body.classList.remove('bg-success');
+  //   document.body.classList.remove('bg-primary');
+  //   document.body.classList.remove('bg-danger');
+  // }
 
-  const toggleMode = (cls) => {  //toggleMode(cls)
-    removeBodyClasses();
-    document.body.classList.add('bg-'+cls);
+  const toggleMode = () => {  //toggleMode(cls)
+    // removeBodyClasses();
+    // document.body.classList.add('bg-'+cls);
     if(mode === 'dark'){
       setmode('light');
       document.body.style.backgroundColor = 'white';

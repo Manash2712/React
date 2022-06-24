@@ -19,6 +19,11 @@ export default function TextForm(props) {
         setText(event.target.value);  // using this onChange event we will be able to change the text of that text area and update it too!
     }
 
+    const handleCopy = () => {
+        navigator.clipboard.writeText(text);
+        props.showAlert('Copied to Clipboard','success');
+    }
+
     const clear = () => {
         setText("");
         props.showAlert("Text Cleared","success");
@@ -33,11 +38,12 @@ export default function TextForm(props) {
             </div>        
             <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to UpperCase</button>
             <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to LowerCase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
             <button className="btn btn-primary mx-1 my-1" onClick={clear}>Clear Text</button>
         </div>
         <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
             <h1>Your text summary</h1>
-            <p>{text.trim()===""?0:text.trim().replace(/\n/g," ").split(" ").filter(value => value !== "").length} Words, {text.trim().replace(/\n/g," ").split("").filter(value => value !== " ").length} characters</p>
+            <p>{text.trim()===""?0:text.trim().replace(/\n/g," ").split(" ").filter(value => value !== "").length} Words, {text.trim().replace(/\n/g," ").split("").filter(value => value !== " ").length} characters</p>    {/* text.split(/\s+/)*/}
             <p>{text.trim()===""?0:text.trim().replace(/\n/g," ").split(" ").filter(value => value !== "").length * 0.008} Minutes read</p>
             <h2>Preview</h2>
             <p>{text.trim().replace(/\n/g," ").split("").filter(value => value !== " ").length>0 ? text: "Enter something above to preview"}</p>
